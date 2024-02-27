@@ -65,7 +65,7 @@ app.get("/",(req,res)=>{
       console.log(result[0])
       // res.send(" I AM VERY HAPPY!");
       // res.send(result[0]);
-      let fakedata=result[0]["count(*)"];
+      let fakedata=result[0]["count(*)"];   
       res.render("home.ejs",{fakedata});
     })
   } catch (error) {
@@ -76,7 +76,7 @@ res.send(" i am not happy!");
 //  show rought 
 app.get("/user",(req,res)=>{
 
-  let q="select * from user5";
+  let q="select * from user5 limit 10";
   try {
     connection.query(q,(err,result)=>{
       if(err) throw err

@@ -26,7 +26,8 @@
     <form method="post" action="/user/add">
       <button>add new list</button>
     </form>
-    <%  for (list of userdata) {%>
+      <%  for (list of userdata) {%>
+  
   <tr>
 
   <td><%= list.userId%></td>
@@ -38,7 +39,17 @@
 </tr>
 
       <%  }%>
-</table>
+</table><br><br><br><br><br>
+<div style="background-color: aquamarine; font-style: italic; color: black;">
+  
+    <%  for (list of userdata) {%>
+        <h1 style="color: brown;">USRID : <%= list.userId %></h1>
+        <h4> USERNAME : <%= list.username %></h4>
+        <h2> email of USER : <%= list.email %></h2>
+        <hr style="color: aqua; size: 2px;">
+      <%  }%>
+  
+</div>
 
 </body>
 </html>
