@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> show users</title>
+  <style>
+    table , tr,th{
+      border: 2px solid red;
+    }
+    table , tr,td{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="align-content: center;">company of amazon to user data!</h1>
+
+<table>
+  <tr>  
+    
+      <th>USERID</th>
+      <th>USERNAME</th>
+      <th>email ID</th>
+  </tr>
+    <form method="post" action="/user/add">
+      <button>add new list</button>
+    </form>
+    <%  for (list of userdata) {%>
+  <tr>
+
+  <td><%= list.userId%></td>
+  <td><%= list.username%></td>
+  <td><%= list.email%></td>
+  <td>
+    <form method="get" action="/user/<%= list.userId %>/edit?__method=patch"><button>edit data</button></form>
+  </td>
+</tr>
+
+      <%  }%>
+</table>
+
+</body>
+</html>
