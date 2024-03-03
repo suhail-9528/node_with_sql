@@ -7,7 +7,7 @@ const { faker } = require('@faker-js/faker');
  const mysql=require("mysql2");
  const express=require("express");
  const app=express();
- const port=3000;
+ const port=3001;
  const path=require("path");
  var methodOverride = require('method-override');
 
@@ -92,6 +92,10 @@ res.send(" i am not happy!");
 // add route 
 app.post("/user/add",(req,res)=>{
   let q="insert into user5 (userId,username,email) values ?";
+  let {data}=req.body;
+  let {g}=req.params;
+  console.log(g);
+  console.log(data);
   res.render("adduserdata.ejs");
 });
 app.get("/user/:id/edit",(req,res)=>{

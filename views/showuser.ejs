@@ -24,28 +24,24 @@
       <th>email ID</th>
   </tr>
     <form method="post" action="/user/add">
-      <button>add new list</button>
+      <button style="color: white; background-color: black;">add new list</button>
     </form>
       <%  for (list of userdata) {%>
-  
   <tr>
-
   <td><%= list.userId%></td>
   <td><%= list.username%></td>
   <td><%= list.email%></td>
   <td>
     <form method="get" action="/user/<%= list.userId %>/edit?__method=patch"><button>edit data</button></form>
   </td>
-</tr>
-
-      <%  }%>
+</tr>    <%  }%>
 </table><br><br><br><br><br>
 <div style="background-color: aquamarine; font-style: italic; color: black;">
   
     <%  for (list of userdata) {%>
-        <h1 style="color: brown;">USRID : <%= list.userId %></h1>
-        <h4> USERNAME : <%= list.username %></h4>
-        <h2> email of USER : <%= list.email %></h2>
+        <h2 style="color: brown;">USRID : <%= list.userId %></h2>
+        <h1> USERNAME : <%= list.username %></h1>
+        <h3> email of USER : <%= list.email %></h3>
         <hr style="color: aqua; size: 2px;">
       <%  }%>
   
